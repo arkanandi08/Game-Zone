@@ -1,0 +1,73 @@
+
+body{
+    text-align: center;
+}
+button{
+    font-size: 4vh;
+    background-color: blue;
+    color: white;
+    cursor: pointer;
+    padding: 1vh;
+    border-radius: 1vh;
+}
+#diceu, #diced{
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 60px;
+}
+#diceu img{
+    height: 10vh;
+}
+#diced img{
+    height: 10vh;
+}
+#board{
+    border-collapse: collapse;
+}
+#board th{
+            width: 50px;
+            height: 50px;
+            border: 2px solid black;
+            text-align: center;
+            font-size: 3.5vh;
+}
+#covu, #covd{
+    height: 10vh;
+    width: 10vh;
+    background-color: rgba(36, 36, 36, 0.534);
+    justify-self: center;
+}
+#covu{
+    position: relative;
+    bottom: 10.5vh;
+    visibility: hidden;
+}
+#covd{
+    position: relative;
+    top: 10vh;
+}
+.tokenu, .tokend{
+    width:4vh;
+    height:4vh;
+    text-align: center;
+    align-content: center;
+    border-radius:50%;
+    margin:auto;
+    display: inline-block;
+}
+.tokenu{
+    background:red;
+    color: red;
+}
+.tokend{
+    background:blue;
+    color: blue;
+}
+#countu, #countd{
+    display: none;
+}
+#start{
+    position: relative;
+    bottom: 19vh;
+    right: 34vh;
+}
