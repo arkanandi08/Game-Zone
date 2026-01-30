@@ -1,4 +1,4 @@
- function color() {
+ function init() {
    for (i = 0; i <= 9; i++) {
      document.getElementById("c" + i + "9").style.background = "yellow";
      document.getElementById("c" + i + "7").style.background = "yellow";
