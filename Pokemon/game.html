@@ -7,24 +7,31 @@
   <link rel="stylesheet" href="style.css">
   <script src="main.js"></script>
   <title>Pokemon</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 
 <body>
   <div id="ifrm">
-    <iframe src="start.html" class="frame"></iframe>
+    <iframe src="start.html" id="frame"></iframe>
   </div>
   <div id="controls">
-    <div id="A">A</div>
+    <div id="A" onclick="aclick()">A</div>
     <div id="B">B</div>
     <div id="start">START</div>
     <div id="shift">SHIFT</div>
     <div id="L">L</div>
     <div id="R">R</div>
-    <div id="ctrls">
+    <div onclick="fullscreen()" id="full"><i class="fa-solid fa-expand"></i>
+</div>
+<div onclick="exfull()" id="exfull"><i class="fa-solid fa-compress"></i>
+</div>
+    <div id="dpadlay">
+      <div id="dpad">
       <div id="up"></div>
       <div id="down"></div>
       <div id="right"></div>
       <div id="left"></div>
+    </div>
     </div>
   </div>
 </body>

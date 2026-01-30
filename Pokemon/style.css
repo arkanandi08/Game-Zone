@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'PokemonEmerald';
-  src: url('/fonts/pokemon-emerald.otf.woff2') format('woff2');
+  src: url('fonts/pokemon-emerald.otf.woff2') format('woff2');
   font-weight: normal;
   font-style: normal;
 }
@@ -30,21 +30,22 @@ body {
   animation: comgo 8s ease forwards;
   animation-delay: 2s;
   opacity: 0;
+  font-size: 8vh;
 }
 
 @keyframes comgo {
   0% {
     opacity: 0;
   }
-  
+
   25% {
     opacity: 1;
   }
-  
+
   75% {
     opacity: 1;
   }
-  
+
   100% {
     opacity: 0;
   }
@@ -69,8 +70,8 @@ body {
   animation-delay: 10s;
 }
 
-#start {
-  max-width: 100%;
+#start1 {
+  width: 100%;
   position: fixed;
   left: 0;
   right: 0;
@@ -86,22 +87,22 @@ body {
     opacity: 0;
     filter: contrast(0%);
   }
-  
+
   5% {
     opacity: 1;
     filter: contrast(0%);
   }
-  
+
   10% {
     opacity: 0;
     filter: contrast(0%);
   }
-  
+
   50% {
     opacity: 1;
     filter: contrast(50%);
   }
-  
+
   100% {
     opacity: 1;
     filter: contrast(100%);
@@ -123,29 +124,29 @@ body {
     opacity: 0;
     filter: contrast(0%);
   }
-  
+
   2% {
     opacity: 1;
     filter: contrast(0%);
   }
-  
+
   4% {
     opacity: 0;
     filter: contrast(0%);
   }
-  
+
   65% {
     opacity: 1;
     filter: contrast(100%);
   }
-  
+
   100% {
     opacity: 0;
   }
 }
 
-#start1 {
-  max-width: 100%;
+#start2 {
+  width: 100%;
   position: fixed;
   left: 0;
   right: 0;
@@ -160,7 +161,7 @@ body {
   0% {
     opacity: 0;
   }
-  
+
   100% {
     opacity: 1;
   }
@@ -194,25 +195,25 @@ body {
     transform: translate(-60%, 60%);
     opacity: 0;
   }
-  
+
   16% {
     opacity: 1;
   }
-  
+
   25% {
     transform: translate(60%, -60%);
     opacity: 0;
   }
-  
+
   75% {
     transform: translate(-60%, 60%);
     opacity: 0;
   }
-  
+
   83% {
     opacity: 1;
   }
-  
+
   100% {
     transform: translate(60%, -60%);
     opacity: 0;
@@ -222,7 +223,7 @@ body {
 
 footer {
   position: fixed;
-  top: 90%;
+  top: 94%;
   color: #FFFFFF;
   font-weight: bolder;
   text-shadow:
@@ -233,6 +234,7 @@ footer {
   opacity: 0;
   animation: come 5s ease forwards;
   animation-delay: 25s;
+  font-size: 6vh;
 }
 
 @keyframes come {
@@ -243,30 +245,37 @@ footer {
 
 #pst {
   position: fixed;
-  top: 65%;
-  left: 6%;
+  top: 70%;
+  left: 4%;
   color: #FFFFFF;
-  background: #42445A7A;
-  border-radius: 10px;
-  padding: 1vh;
+  background: #4b6405bf;
+  border-radius: 3vh;
+  border: 1vh solid #84a803;
+  padding: 1%;
+  text-align: center;
+  font-size: 6vh;
   animation: come 3s ease forwards;
   animation-delay: 28s;
   opacity: 0;
 }
 
-.frame {
+#frame {
   width: 100%;
-  max-width: 100vw;
   height: auto;
   aspect-ratio: 16 / 9;
   border: none;
   display: block;
   margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
 }
 
 #controls {
-  color: #FFFFFF;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #aaa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
 }
 
 #A,
@@ -279,13 +288,213 @@ footer {
   width: 40px;
   height: auto;
   text-align: center;
-  border: 2px solid #FFFFFF;
+  border: 2px solid #aaa;
   text-align: justify;
   display: flex;
   justify-content: center;
-  font-size: 30px;
+  font-size: 26px;
+  padding: 5px;
+  cursor: pointer;
+}
+#full, #exfull {
+  position: fixed;
+  top: 35%;
+  right: 3px;
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  padding: 5px;
+  cursor: pointer;
+}
+#exfull{
+  display: none;
+}
+#A:hover,
+#B:hover,
+#L:hover,
+#R:hover,
+#shift:hover,
+#start:hover {
+  background: #555;
 }
 
-#A{
-  bottom: 20%;
+#A {
+  bottom: 15%;
+  right: 20px;
+}
+
+#B {
+  bottom: 15%;
+  right: 100px;
+}
+
+#shift,
+#start {
+  position: fixed;
+  border-radius: 50px;
+  padding: 3px;
+  font-size: 18px;
+  padding-left: 7px;
+  padding-right: 8px;
+  border: 2px solid #aaa;
+  cursor: pointer;
+}
+
+#shift {
+  bottom: 25%;
+  right: 93px;
+}
+
+#start {
+  bottom: 25%;
+  right: 10px;
+}
+
+#L {
+  top: 50%;
+  left: 20px;
+}
+
+#R {
+  top: 50%;
+  right: 20px;
+}
+#dpadlay{
+  position: fixed;
+  bottom: 12%;
+  left: 20px;
+}
+#dpad {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+#dpad div {
+  width: 46px;
+  height: 46px;
+  border: 2px solid #aaa;
+  border-radius: 8px;
+  position: absolute;
+  cursor: pointer;
+}
+#dpad div:hover {
+  background: #555;
+}
+#up {
+  top: 0;
+  left: 52px;
+}
+
+#down {
+  bottom: 0;
+  left: 52px;
+}
+
+#left {
+  left: 0;
+  top: 52px;
+}
+
+#right {
+  right: 0;
+  top: 52px;
+}
+
+#center {
+  top: 42px;
+  left: 42px;
+}
+
+/* arrows */
+#up::after,
+#down::after,
+#left::after,
+#right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+}
+
+#up::after {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #aaa;
+}
+
+#down::after {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid #aaa;
+}
+
+#left::after {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #aaa;
+}
+
+#right::after {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #aaa;
+}
+
+/*intro*/
+.intro{
+  background: #0062ad;
+  color: #e7e7e7;
+  font-size: 4vh;
+}
+header{
+  position: fixed;
+  top: 0px;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px;
+  font-size: 4vh;
+}
+#Anxt{
+  background-color: #e7e7e7;
+  color: #0062ad;
+  display: inline-block;
+  padding-left: 0.8vh;
+  padding-right: 0.5vh;
+  border-radius: 5px;
+}
+hr{
+  border: 2px solid #1d1d1d;
+  position: fixed;
+  top: 4%;
+  width: 100%;
+}
+#introcont{
+  margin-top: 8vh;
+  padding: 2%;
+  text-align: justify;
+  overflow-y: auto;
+}
+#nxtarw{
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #d90303;
+  position: fixed;
+  bottom: 2vh;
+  right: 2%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
