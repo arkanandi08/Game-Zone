@@ -1,0 +1,534 @@
+@media only screen and (max-width : 100vh) {
+    :root {
+        --l: clamp(0.1, calc(100vw / 90vh), 1);
+    }
+    
+    #f1,
+    #f2,
+    #f3 {
+        font-size: 3vh;
+    }
+    
+    
+    #friend {
+        margin-left: -17vw;
+    }
+    
+    #pc {
+        margin-left: 15vw;
+    }
+    
+    .ftok {
+        width: 6vh;
+        position: absolute;
+        margin-left: -40vh;
+    }
+    
+    #lboard {
+        position: fixed;
+        top: 5vh;
+        transform: scale(var(--l));
+        transform-origin: left;
+    }
+    
+    .dicebox.g {
+        margin-top: -60vw;
+        left: 1vh;
+    }
+    
+    .dicebox.y {
+        margin-top: -60vw;
+        right: 1vh;
+    }
+    
+    .dicebox.r {
+        margin-top: 60vw;
+        left: 1vh;
+    }
+    
+    .dicebox.b {
+        margin-top: 60vw;
+        right: 1vh;
+    }
+    
+    .dicebox {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    
+}
+
+@media only screen and (min-width : 100vh) {
+
+    #f1,
+    #f2,
+    #f3 {
+        font-size: 4vh;
+    }
+    
+    #friend {
+        margin-left: -15vh;
+    }
+    
+    #pc {
+        margin-left: 13vh;
+    }
+    
+    .ftok {
+        width: 7vh;
+        position: absolute;
+        left: 2vh;
+        margin-top: -2vh;
+    }
+    
+    #lboard {
+        transform: scale(min(1.11, calc(100vw / 90vh)));
+        transform-origin: top;
+    }
+    
+    .dicebox.g {
+        top: 1vh;
+        margin-left: -120vh;
+    }
+    
+    .dicebox.y {
+        top: 1vh;
+        margin-right: -120vh;
+    }
+    
+    .dicebox.r {
+        bottom: 1vh;
+        margin-left: -120vh;
+    }
+    
+    .dicebox.b {
+        bottom: 1vh;
+        margin-right: -120vh;
+    }
+    
+}
+
+#dieload{
+    display: none;
+}
+
+body {
+    text-align: center;
+    background-color: #fbebc9;
+    color: #2d100c;
+    margin: 0;
+    padding: 0;
+    font-family: 'Fredoka One', cursive;
+}
+
+#game {
+    display: none;
+}
+
+#start {
+    z-index: 10;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    display: block;
+}
+
+#f1,
+#f2,
+#f3 {
+    position: fixed;
+    inset: 0;
+}
+
+#f2,
+#f3 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    background-color: #fbebc9;
+    width: 70vw;
+    max-width: max-content;
+    height: max-content;
+    padding: 5vh;
+    border: 2vh solid #2d100c;
+    border-radius: 4vh;
+    color: #2d100c;
+}
+
+#f2 {
+    padding-left: 10vh;
+}
+
+#f1 {
+    display: block;
+}
+
+#cards {
+    backdrop-filter: blur(5px);
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+}
+
+.card,
+.card2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100vw;
+    max-width: 90vh;
+}
+
+#friend,
+#pc {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    cursor: pointer;
+    border: 0.7vh solid #fbebc9;
+    border-radius: 35%;
+    width: 17vw;
+    max-width: 15vh;
+}
+
+#pc:hover,
+#friend:hover {
+    transition: transform 0.3s ease;
+    box-shadow: 0 1vh 2vh rgb(0, 0, 0);
+}
+
+input {
+    background-color: #2d100c;
+    color: #fbebc9;
+    font-size: 3vh;
+    font-family: 'Fredoka One', cursive;
+    border-radius: 2vh;
+    cursor: pointer;
+    padding: 1vh;
+    width: 70vw;
+    max-width: max-content;
+}
+
+
+.ldbody {
+    background: url('ludobg.png') repeat center top;
+    background-size: cover;
+}
+
+#lboard {
+    width: 90vh;
+    height: 90vh;
+    border-collapse: collapse;
+    color: #000;
+    box-shadow: 0 6px 12px #170806,
+        0 3px 6px #511d16,
+        0 -3px 6px #1a0907;
+    border: 2px solid #000;
+    table-layout: fixed;
+}
+
+td {
+    height: calc(100% / 15);
+    background: #ffffff;
+    font-size: 4vh;
+    color: #000;
+}
+
+td i {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+#redh {
+    background-color: #fc0000;
+}
+
+#blueh {
+    background-color: #00acff;
+}
+
+#greenh {
+    background-color: #01992a;
+}
+
+#yellowh {
+    background-color: #fee800;
+}
+
+#redcell {
+    background-color: #fc0000;
+}
+
+#bluecell {
+    background-color: #00acff;
+}
+
+#greencell {
+    background-color: #01992a;
+}
+
+#yellowcell {
+    background-color: #fee800;
+}
+
+.tri {
+    position: absolute;
+    width: 18vh;
+    height: 18vh;
+    transform: translate(-0.5vh, -50%);
+    border: 1px solid #000;
+}
+
+.red {
+    background: #fc0000;
+    clip-path: polygon(50% 50%, 0% 100%, 100% 100%);
+}
+
+.yellow {
+    background: #fee800;
+    clip-path: polygon(50% 50%, 0% 0%, 100% 0%);
+}
+
+.green {
+    background: #01992a;
+    clip-path: polygon(50% 50%, 0% 0%, 0% 100%);
+}
+
+.blue {
+    background: #00acff;
+    clip-path: polygon(50% 50%, 100% 0%, 100% 100%);
+}
+
+.rooms {
+    position: absolute;
+    width: 24vh;
+    height: 24vh;
+    transform: translate(6vh, -50%);
+    border: 1px solid #000;
+    border-radius: 15px;
+    background: #ffffffbc;
+}
+
+.hole {
+    width: 6.5vh;
+    height: 6.5vh;
+    border-radius: 50%;
+    border: 1px solid #000;
+    position: absolute;
+}
+
+.hole.g {
+    background-color: #01992a;
+}
+
+.hole.y {
+    background-color: #fee800;
+}
+
+.hole.r {
+    background-color: #fc0000;
+}
+
+.hole.b {
+    background-color: #00acff;
+}
+
+.hole.one {
+    top: 3vh;
+    left: 3vh;
+}
+
+.hole.two {
+    top: 3vh;
+    left: 14.5vh;
+}
+
+.hole.three {
+    top: 14.5vh;
+    left: 3vh;
+}
+
+.hole.four {
+    top: 14.5vh;
+    left: 14.5vh;
+}
+
+#diceg,
+#dicey,
+#dicer,
+#diceb {
+    display: inline-block;
+    border-radius: 6px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+
+.dicebox img {
+    height: 10vw;
+    max-height: 10vh;
+}
+
+.dicebox img:hover {
+    transform: scale(1.1);
+}
+
+.dicebox img:active {
+    transform: scale(0.95);
+}
+
+.dicebox {
+    position: fixed;
+    background: linear-gradient(0deg, #d9a8a3, #ffffff);
+    max-width: 15vh;
+    width: 15vw;
+    height: 15vw;
+    max-height: 15vh;
+    border-radius: 10px;
+    align-content: center;
+    justify-self: center;
+    z-index: 5;
+}
+
+
+.token,
+.tcov {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 6;
+}
+
+.tcov {
+    width: 7vh;
+    background-color: transparent;
+}
+
+.token {
+    filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.5));
+    width: 100%;
+}
+
+.token:hover {
+    transform: translateY(-0.2vh) scale(1.1);
+}
+
+.token:active {
+    transform: scale(0.95);
+}
+
+#covg,
+#covb,
+#covr,
+#covy {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #000000ad;
+    z-index: 10;
+}
+
+#covr {
+    visibility: hidden;
+}
+
+#g1,
+#g3,
+#r1,
+#r3 {
+    margin-left: 9.3vh;
+}
+
+#g4,
+#g2,
+#r4,
+#r2 {
+    margin-left: 20.75vh;
+}
+
+#g1,
+#g2,
+#y1,
+#y2 {
+    margin-bottom: 74.3vh;
+}
+
+#g3,
+#g4,
+#y3,
+#y4 {
+    margin-bottom: 62.9vh;
+}
+
+#b1,
+#b3,
+#y1,
+#y3 {
+    margin-left: 63.1vh;
+}
+
+#b2,
+#b4,
+#y2,
+#y4 {
+    margin-left: 74.55vh;
+}
+
+#r1,
+#r2,
+#b1,
+#b2 {
+    margin-bottom: 20.4vh;
+}
+
+#r3,
+#r4,
+#b3,
+#b4 {
+    margin-bottom: 8.9vh;
+}
+
+#nameg,
+#nameb,
+#namer,
+#namey {
+    position: absolute;
+    font-size: 4vh;
+    width: 36vh;
+    color: #ffffff;
+    -webkit-text-stroke: 0.2vh black;
+    
+}
+
+#nameg {
+    top: 0.5vh;
+    left: 18vh;
+    transform: translateX(-50%);
+}
+
+#nameb {
+    bottom: 0.5vh;
+    right: 18vh;
+    transform: translateX(50%);
+}
+
+#namey {
+    top: 0.5vh;
+    right: 18vh;
+    transform: translateX(50%);
+}
+
+#namer {
+    bottom: 0.5vh;
+    left: 18vh;
+    transform: translateX(-50%);
+}

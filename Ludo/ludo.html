@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Ludo</title>
+    <link rel="stylesheet" type="text/css" href="ludo.css">
+    <script src="ludo.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="ldbody">
+    <div id="start">
+        <div id="cards">
+            <div id="dieload">
+                <img src="die1.png" alt="" />
+                <img src="die2.png" alt="" />
+                <img src="die3.png" alt="" />
+                <img src="die4.png" alt="" />
+                <img src="die5.png" alt="" />
+                <img src="die6.png" alt="" />
+            </div>
+            <form id="f1">
+                <img src="ludocard.png" class="card2">
+                <img src="friend.png" id="friend" onclick="frnd()">
+                <img src="pc.png" id="pc" onclick="comp()">
+            </form>
+            <form id="f2">
+                Enter Player 1 Name:<img src="red.svg" alt="red token" class="ftok r">
+                <input type="text" id="rname" name="rname" placeholder="PLAYER 1" onkeyup="capital('r')"><br><br>
+                Enter Player 2 Name:<img src="blue.svg" alt="blue token" class="ftok b">
+                <input type="text" id="bname" name="bname" placeholder="PLAYER 2" onkeyup="capital('b')"><br><br>
+                Enter Player 3 Name:<img src="yellow.svg" alt="yellow token" class="ftok y">
+                <input type="text" id="yname" name="yname" placeholder="PLAYER 3" onkeyup="capital('y')"><br><br>
+                Enter Player 4 Name:<img src="green.svg" alt="green token" class="ftok g">
+                <input type="text" id="gname" name="gname" placeholder="PLAYER 4" onkeyup="capital('g')"><br><br>
+                <p>Click the button below to start the game.</p>
+                <input type="button" value="Start Game" onclick="enter()">
+            </form>
+            <form id="f3">
+                SORRY FOR INCONVIENIENCE <br> Work in progress !! <br><br>
+                <input type="button" value="Go Back" onclick="enter2()">
+            </form>
+        </div>
+    </div>
+    <div id="game">
+        <div class="dicebox g">
+            <div id="diceg" onclick="roll('g')">
+                <img src="die6.png" alt="DICE">
+            </div>
+            <div id="covg"></div>
+        </div>
+        <div class="dicebox y">
+            <div id="dicey" onclick="roll('y')">
+                <img src="die6.png" alt="DICE">
+            </div>
+            <div id="covy"></div>
+        </div>
+        <div class="dicebox r">
+            <div id="dicer" onclick="roll('r')">
+                <img src="die6.png" alt="DICE">
+            </div>
+            <div id="covr"></div>
+        </div>
+        <div class="dicebox b">
+            <div id="diceb" onclick="roll('b')">
+                <img src="die6.png" alt="DICE">
+            </div>
+            <div id="covb"></div>
+        </div>
+        <table id="lboard" border="1" align="center">
+            <tr>
+                <td id="greenh" colspan="6" rowspan="6">
+                    <div id="nameg">arka</div>
+                    <div class="rooms">
+                        <div class="hole one g"></div>
+                        <div class="hole two g"></div>
+                        <div class="hole three g"></div>
+                        <div class="hole four g"></div>
+                    </div>
+                    <div id="g1" class="tcov"><img src="green.svg" alt="green token" class="token" onclick="movetoken('g1')"></div>
+                    <div id="g2" class="tcov"><img src="green.svg" alt="green token" class="token" onclick="movetoken('g2')"></div>
+                    <div id="g3" class="tcov"><img src="green.svg" alt="green token" class="token" onclick="movetoken('g3')"></div>
+                    <div id="g4" class="tcov"><img src="green.svg" alt="green token" class="token" onclick="movetoken('g4')"></div>
+                </td>
+                <td></td>
+                <td style="color: #fee800;"><i class="fa fa-long-arrow-down"></i></td>
+                <td></td>
+                <td id="yellowh" colspan="6" rowspan="6">
+                    <div id="namey">arka</div>
+                    <div class="rooms">
+                        <div class="hole one y"></div>
+                        <div class="hole two y"></div>
+                        <div class="hole three y"></div>
+                        <div class="hole four y"></div>
+                    </div>
+                    <div id="y1" class="tcov"><img src="yellow.svg" alt="yellow token" class="token" onclick="movetoken('y1')"></div>
+                    <div id="y2" class="tcov"><img src="yellow.svg" alt="yellow token" class="token" onclick="movetoken('y2')"></div>
+                    <div id="y3" class="tcov"><img src="yellow.svg" alt="yellow token" class="token" onclick="movetoken('y3')"></div>
+                    <div id="y4" class="tcov"><img src="yellow.svg" alt="yellow token" class="token" onclick="movetoken('y4')"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="yellowcell"></td>
+                <td id="yellowcell"><i class="fa fa-dot-circle-o"></i></td>
+            </tr>
+            <tr>
+                <td><i class="fa fa-star-o"></i></td>
+                <td id="yellowcell"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="yellowcell"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="yellowcell"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="yellowcell"><i class="fa fa-bullseye"></i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="greencell"><i class="fa fa-dot-circle-o"></i></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="home" colspan="3" rowspan="3">
+                    <div class="tri green"></div>
+                    <div class="tri yellow"></div>
+                    <div class="tri blue"></div>
+                    <div class="tri red"></div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><i class="fa fa-star-o"></i></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="color: #01992a;"><i class="fa fa-long-arrow-right"></i></td>
+                <td id="greencell"></td>
+                <td id="greencell"></td>
+                <td id="greencell"></td>
+                <td id="greencell"></td>
+                <td id="greencell"><i class="fa fa-bullseye"></i></td>
+                <td id="bluecell"><i class="fa fa-bullseye"></i></td>
+                <td id="bluecell"></td>
+                <td id="bluecell"></td>
+                <td id="bluecell"></td>
+                <td id="bluecell"></td>
+                <td style="color: #00acff;"><i class="fa fa-long-arrow-left"></i></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td><i class="fa fa-star-o"></i></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="bluecell"><i class="fa fa-dot-circle-o"></i></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="redh" colspan="6" rowspan="6">
+                    <div id="namer">arka</div>
+                    <div class="rooms">
+                        <div class="hole one r"></div>
+                        <div class="hole two r"></div>
+                        <div class="hole three r"></div>
+                        <div class="hole four r"></div>
+                    </div>
+                    <div class="tcov" id="r1"><img src="red.svg" alt="red token" class="token" onclick="movetoken('r1')"></div>
+                    <div class="tcov" id="r2"><img src="red.svg" alt="red token" class="token" onclick="movetoken('r2')"></div>
+                    <div class="tcov" id="r3"><img src="red.svg" alt="red token" class="token" onclick="movetoken('r3')"></div>
+                    <div class="tcov" id="r4"><img src="red.svg" alt="red token" class="token" onclick="movetoken('r4')"></div>
+                </td>
+                <td></td>
+                <td id="redcell"><i class="fa fa-bullseye"></i></td>
+                <td></td>
+                <td id="blueh" colspan="6" rowspan="6">
+                    <div id="nameb">arka</div>
+                    <div class="rooms">
+                        <div class="hole one b"></div>
+                        <div class="hole two b"></div>
+                        <div class="hole three b"></div>
+                        <div class="hole four b"></div>
+                    </div>
+                    <div class="tcov" id="b1"><img src="blue.svg" alt="blue token" class="token" onclick="movetoken('b1')"></div>
+                    <div class="tcov" id="b2"><img src="blue.svg" alt="blue token" class="token" onclick="movetoken('b2')"></div>
+                    <div class="tcov" id="b3"><img src="blue.svg" alt="blue token" class="token" onclick="movetoken('b3')"></div>
+                    <div class="tcov" id="b4"><img src="blue.svg" alt="blue token" class="token" onclick="movetoken('b4')"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="redcell"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="redcell"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="redcell"></td>
+                <td><i class="fa fa-star-o"></i></td>
+            </tr>
+            <tr>
+                <td id="redcell"><i class="fa fa-dot-circle-o"></i></td>
+                <td id="redcell"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td style="color: #fc0000;"><i class="fa fa-long-arrow-up"></i></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

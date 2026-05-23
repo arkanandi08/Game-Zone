@@ -1,0 +1,256 @@
+@font-face {
+  font-family: 'PokemonEmerald';
+  src: url('/fonts/pokemon-emerald.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width : 130vh) {
+  .logo-text{
+    display: none;
+  }
+  #search{
+    margin-left: 12vw;
+  }
+  
+#nlogo{
+    margin-left: -10%;
+}
+
+#n1{
+  font-size: 7vw;
+  margin-left: 8vw;
+}
+}
+
+@media only screen and (min-width : 130vh) {
+ 
+#n1{
+    font-size: 6vh;
+}
+}
+
+
+body {
+  margin: 0;
+  font-family: 'PokemonEmerald', sans-serif;
+  letter-spacing: 1px;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+  font-size: 5vh;
+  background-color: #0c0d14;
+  color: #ffffff;
+}
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 8vh;
+  background-color: #1a1b28;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+#nav {
+  height: 20vw;
+  max-height: 20vh;
+  background: linear-gradient(90deg,#1f162d,#1a263e);
+  border-radius: 3vh;
+  position: absolute;
+  top: 11vh;
+  left: 9vh;
+  right: 2.5vh;
+}
+
+#aside{ 
+    width: 22vh;
+    background-color: #0c0d14;
+    position: fixed;
+    top: 8vh;
+    left: 0;
+    bottom: 0;
+    overflow-y: auto; 
+    padding: 20px 10px;
+    border-right: 3px solid #242538;
+    font-size: 2.7vh;
+    line-height: 2;
+    display: block;
+}
+#aside div {
+    display: none;
+}
+
+#aside i {
+  color: #8f70fd;
+  cursor: pointer;
+}
+
+#aside hr{
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  border-color: #242538;
+}
+
+#aside div {
+  cursor: pointer;
+}
+
+#aside div:hover {
+  color: #aaadbe;
+}
+
+#aside::-webkit-scrollbar {
+  width: 5px;  
+}
+
+#aside::-webkit-scrollbar-track {
+  background: #0c0d14;
+}
+
+#aside::-webkit-scrollbar-thumb {
+  background: #828282;
+  border-radius: 10px;
+}
+
+#aside::-webkit-scrollbar-thumb:hover {
+  background: #aaadbe;
+}
+.menu {
+  position: fixed;
+  top: 2vh;
+  left: 2vh;
+  font-size: 24px;
+  background: transparent;
+  color: #f7f7f7;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  z-index: 1000;
+}
+
+#openmenu {
+  display: none;
+}
+#closemenu {
+  display: block;
+}
+#search{
+    background-color: #373952;
+    max-width: 45vh;
+    width: 35vw;
+    border-radius: 10vh;
+    border: none;
+    padding: 1.5vh;
+    color: #dddfe7;
+}
+#srch{
+    color: #848693;
+    font-size: 2.3vh;
+    position: relative;
+    right: 4vh;
+    bottom: 0.5vh;
+    cursor: pointer;
+}
+#login{
+    background-color: #6842ff;
+    font-size: 3vh;
+    padding: 1vh;
+    padding-left: 2vh;
+    padding-right: 2vh;
+    border-radius: 3vh;
+    position: absolute;
+    right: 3vh;
+    cursor: pointer;
+}
+#login:hover{
+    background-color: #7b57ff; 
+}
+
+.logo-text{
+    font-family: 'Poppins', sans-serif;
+    font-size: 3vh;
+    font-weight:bold;
+    background:linear-gradient(90deg,#38bdf8,#a78bfa);
+    background-clip:text;
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color:transparent;
+    position: absolute;
+    left: 22vh;
+    top: 2vh;
+}
+
+#logo{
+    width: 11vh;
+    position: absolute;
+    left: 9vh;
+    top: 1.5vh;
+}
+
+#nlogo{
+  width: 19vw;
+    max-width: 18vh;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25%;
+}
+
+#n1{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    top: 50%;
+    text-align: center;
+}
+
+#games {
+  position: absolute;
+  top: 30vh;
+  left: 10vh;
+  right: 10vh;
+  font-size: 3vh;
+}
+
+.game-card {
+  background-color: #1a1b28;
+  border-radius: 3vh;
+  margin-top: 20px;
+  display: flex;
+  width: 80%;
+  height: 30vh;
+    position: fixed;
+  top: 36vh;
+  left: 10vh;
+    overflow-x: auto; 
+    padding-right: 20%;
+}
+
+.game-card::-webkit-scrollbar {
+  display: none;
+}
+
+.game-card img {
+  border-radius: 2vh;
+  cursor: pointer;
+  margin: 1vh;
+}
+
+.sal {
+  max-width: 25vh;
+}
+.pokemon {
+  border: 0.5vh solid #840497;
+}
+.game-card img:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+  box-shadow: 0 1vh 2vh rgb(0, 0, 0);
+}

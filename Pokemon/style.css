@@ -1,0 +1,537 @@
+@font-face {
+  font-family: 'PokemonEmerald';
+  src: url('/fonts/pokemon-emerald.otf.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #000000;
+  font-family: 'PokemonEmerald', sans-serif;
+  letter-spacing: 1px;
+  image-rendering: pixelated;
+  -webkit-font-smoothing: none;
+  font-smooth: never;
+}
+
+#first {
+  position: fixed;
+  left: 0;
+  right: 0;
+  color: #FFFFFF;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  animation: comgo 8s ease forwards;
+  animation-delay: 2s;
+  opacity: 0;
+  font-size: 8vh;
+}
+
+@keyframes comgo {
+  0% {
+    opacity: 0;
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+
+#logo {
+  height: 100%;
+}
+
+#logod {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  padding: 2%;
+  opacity: 0;
+  animation: comgo 5s ease forwards;
+  animation-delay: 10s;
+}
+
+#start1 {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: auto;
+  animation: baja 5s ease forwards;
+  animation-delay: 17s;
+  opacity: 0;
+  margin-top: 4.4%;
+}
+
+@keyframes baja {
+  0% {
+    opacity: 0;
+    filter: contrast(0%);
+  }
+
+  5% {
+    opacity: 1;
+    filter: contrast(0%);
+  }
+
+  10% {
+    opacity: 0;
+    filter: contrast(0%);
+  }
+
+  50% {
+    opacity: 1;
+    filter: contrast(50%);
+  }
+
+  100% {
+    opacity: 1;
+    filter: contrast(100%);
+  }
+}
+
+#bash {
+  position: fixed;
+  width: 23%;
+  right: 5%;
+  top: 23%;
+  animation: acm 9s ease forwards;
+  animation-delay: 15s;
+  opacity: 0;
+}
+
+@keyframes acm {
+  0% {
+    opacity: 0;
+    filter: contrast(0%);
+  }
+
+  2% {
+    opacity: 1;
+    filter: contrast(0%);
+  }
+
+  4% {
+    opacity: 0;
+    filter: contrast(0%);
+  }
+
+  65% {
+    opacity: 1;
+    filter: contrast(100%);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+#start2 {
+  width: 100%;
+  position: fixed;
+  left: 0;
+  right: 0;
+  height: auto;
+  animation: aaja 7s ease forwards;
+  animation-delay: 20s;
+  opacity: 0;
+}
+
+
+@keyframes aaja {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+#block {
+  position: fixed;
+  width: 100%;
+  height: 80%;
+  overflow: hidden;
+}
+
+#block::after {
+  content: "";
+  position: absolute;
+  top: -150%;
+  left: -150%;
+  width: 300%;
+  height: 300%;
+  background: linear-gradient(45deg,
+      transparent 47%,
+      white 50%,
+      transparent 52%);
+  transform: translate(-50%, 50%);
+  animation: shine 10s linear infinite;
+  animation-delay: 19s;
+}
+
+@keyframes shine {
+  0% {
+    transform: translate(-60%, 60%);
+    opacity: 0;
+  }
+
+  16% {
+    opacity: 1;
+  }
+
+  25% {
+    transform: translate(60%, -60%);
+    opacity: 0;
+  }
+
+  75% {
+    transform: translate(-60%, 60%);
+    opacity: 0;
+  }
+
+  83% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate(60%, -60%);
+    opacity: 0;
+  }
+}
+
+
+footer {
+  position: fixed;
+  top: 94%;
+  color: #FFFFFF;
+  font-weight: bolder;
+  text-shadow:
+    -1px -1px 0 #FF0000,
+    1px -1px 0 #FF0000,
+    -1px 1px 0 #FF0000,
+    1px 1px 0 #FF0000;
+  opacity: 0;
+  animation: come 5s ease forwards;
+  animation-delay: 25s;
+  font-size: 6vh;
+}
+
+@keyframes come {
+  to {
+    opacity: 1;
+  }
+}
+
+#pst {
+  position: fixed;
+  top: 70%;
+  left: 4%;
+  color: #FFFFFF;
+  background: #4b6405bf;
+  border-radius: 3vh;
+  border: 1vh solid #84a803;
+  padding: 1%;
+  text-align: center;
+  font-size: 6vh;
+  animation: come 3s ease forwards;
+  animation-delay: 28s;
+  opacity: 0;
+}
+
+#frame {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border: none;
+  display: block;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#controls {
+  color: #aaa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#A,
+#B,
+#L,
+#R {
+  position: fixed;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  width: 40px;
+  height: auto;
+  text-align: center;
+  border: 2px solid #aaa;
+  text-align: justify;
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  padding: 5px;
+  cursor: pointer;
+}
+#full, #exfull {
+  position: fixed;
+  top: 35%;
+  right: 3px;
+  display: flex;
+  justify-content: center;
+  font-size: 26px;
+  padding: 5px;
+  cursor: pointer;
+}
+#exfull{
+  display: none;
+}
+#A:hover,
+#B:hover,
+#L:hover,
+#R:hover,
+#shift:hover,
+#start:hover {
+  background: #555;
+}
+
+#A {
+  bottom: 15%;
+  right: 20px;
+}
+
+#B {
+  bottom: 15%;
+  right: 100px;
+}
+
+#shift,
+#start {
+  position: fixed;
+  border-radius: 50px;
+  padding: 3px;
+  font-size: 18px;
+  padding-left: 7px;
+  padding-right: 8px;
+  border: 2px solid #aaa;
+  cursor: pointer;
+}
+
+#shift {
+  bottom: 25%;
+  right: 93px;
+}
+
+#start {
+  bottom: 25%;
+  right: 10px;
+}
+
+#L {
+  top: 50%;
+  left: 20px;
+}
+
+#R {
+  top: 50%;
+  right: 20px;
+}
+#dpadlay{
+  position: fixed;
+  bottom: 12%;
+  left: 20px;
+}
+#dpad {
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+
+#dpad div {
+  width: 46px;
+  height: 46px;
+  border: 2px solid #aaa;
+  border-radius: 8px;
+  position: absolute;
+  cursor: pointer;
+}
+#dpad div:hover {
+  background: #555;
+}
+#up {
+  top: 0;
+  left: 52px;
+}
+
+#down {
+  bottom: 0;
+  left: 52px;
+}
+
+#left {
+  left: 0;
+  top: 52px;
+}
+
+#right {
+  right: 0;
+  top: 52px;
+}
+
+#center {
+  top: 42px;
+  left: 42px;
+}
+
+/* arrows */
+#up::after,
+#down::after,
+#left::after,
+#right::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 0;
+  height: 0;
+}
+
+#up::after {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 15px solid #aaa;
+}
+
+#down::after {
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 15px solid #aaa;
+}
+
+#left::after {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 15px solid #aaa;
+}
+
+#right::after {
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-left: 15px solid #aaa;
+}
+
+/*intro*/
+.intro{
+  background: #0062ad;
+  color: #e7e7e7;
+}
+.intro2{
+  background: #F9FDFF;
+  border: 2vh solid #B9E8F9;
+  color: #555555;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 15vh;
+}
+
+.int2hr{
+    border: 1vh solid #FB0000;
+  position: fixed;
+  top: 9vh;
+  left: 0;
+  width: 100%;
+  background: #FF0000;
+}
+header{
+  position: fixed;
+  top: 2vh;
+  width: 96%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 9vh;
+}
+.Anxt{
+  background-color: #e7e7e7;
+  color: #0062ad;
+  display: inline-block;
+  padding-left: 1vh;
+  padding-right: 0.1vh;
+  border-radius: 5px;
+}
+
+#Bnxt{
+  position: fixed;
+  right: 30vh;
+  top: 2vh;
+}
+#dnxt{
+  color: #e7e7e7;
+  font-size: 40vh;
+  font-weight: bolder;
+    display: inline-block;
+    position: relative;
+    top: 10vh;
+    margin-top: -19vh;
+}
+.int1hr{
+  border: 0.5vh solid #1d1d1d;
+  position: fixed;
+  top: 10vh;
+  width: 100%;
+}
+.step{
+  margin-top: 8vh;
+  padding: 2%;
+  text-align: justify;
+  overflow-y: hidden;
+  font-size: 9vh;
+  display: none;
+}
+.step.active {
+  display: block;
+}
+#nxtarw{
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 15px solid #d90303;
+  position: fixed;
+  bottom: 2vh;
+  right: 2%;
+  transform: translateX(-50%);
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+}

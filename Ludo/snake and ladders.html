@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Snake and Ladders</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="sal.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="salbody">
+    <div id="start">
+        <div id="cards">
+            <form id="f1">
+                <img src="salcard.png" class="card">
+                <img src="friend.png" id="friend" onclick="frnd()">
+                <img src="pc.png" id="pc" onclick="comp()">
+            </form>
+            <form id="f2">
+                Enter Player 1 Name:
+                <input type="text" id="uname" name="uname" placeholder="PLAYER 1" onkeyup="capital('u')"><br><br>
+                Enter Player 2 Name:
+                <input type="text" id="dname" name="dname" placeholder="PLAYER 2" onkeyup="capital('d')"><br><br>
+                <p>Click the button below to start the game.</p>
+                <input type="button" value="Start Game" onclick="enter()">
+            </form>
+            <form id="f3">
+                Enter Your Name:
+                <input type="text" id="nname" name="nname" placeholder="PLAYER" onkeyup="capital('n')"><br>
+                <i class="fa fa-token"></i>
+                <br>
+                <p>Click the button below to start the game.</p>
+                <input type="button" value="Start Game" onclick="enter2()">
+            </form>
+        </div>
+    </div>
+    <div id="game">
+        <div id="diceu" onclick="roll('u')">
+            <img src="die6.png" alt="DICE">
+        </div>
+        <div id="nameu"></div>
+        <div id="covu"></div>
+        <table id="board" border="1" align="center">
+            <tr>
+                <th id="c00"><i class="fa fa-home" id="hme"></i></th>
+                <th id="c99"><span>99</span></th>
+                <th id="c98">98<img src="s6.png" alt="s98" id="s98"></th>
+                <th id="c97"><span>97</span></th>
+                <th id="c96"><span>96</span><img src="lad96.png" alt="l96" id="l96"></th>
+                <th id="c95"><span>95</span></th>
+                <th id="c94"><span>94</span></th>
+                <th id="c93">93<img src="s3.png" alt="s93" id="s93"></th>
+                <th id="c92"><span>92</span></th>
+                <th id="c91"><span>91</span><img src="lad91.png" alt="l91" id="l91"></th>
+            </tr>
+
+            <tr>
+                <th id="c81"><span>81</span></th>
+                <th id="c82"><span>82</span><img src="lad82.png" alt="l82" id="l82"></th>
+                <th id="c83">83<img src="s1.png" alt="s83" id="s83"></th>
+                <th id="c84"><span>84</span></th>
+                <th id="c85"><span>85</span></th>
+                <th id="c86"><span>86</span></th>
+                <th id="c87"><span>87</span><img src="lad38.png" alt="l87" id="l87"></th>
+                <th id="c88"><span>88</span><img src="lad88.png" alt="l88" id="l88"></th>
+                <th id="c89">89<img src="s4.png" alt="s89" id="s89"></th>
+                <th id="c90"><span>90</span></th>
+            </tr>
+
+            <tr>
+                <th id="c80"><span>80</span></th>
+                <th id="c79"><span>79</span></th>
+                <th id="c78"><span>78</span></th>
+                <th id="c77"><span>77</span><img src="lad77.png" alt="l77" id="l77"></th>
+                <th id="c76"><span>76</span></th>
+                <th id="c75"><span>75</span></th>
+                <th id="c74"><span>74</span></th>
+                <th id="c73"><span>73</span></th>
+                <th id="c72"><span>72</span></th>
+                <th id="c71"><span>71</span></th>
+            </tr>
+
+            <tr>
+                <th id="c61"><span>61</span></th>
+                <th id="c62"><span>62</span></th>
+                <th id="c63"><span>63</span></th>
+                <th id="c64">64<img src="s7.png" alt="s64" id="s64"></th>
+                <th id="c65"><span>65</span></th>
+                <th id="c66"><span>66</span></th>
+                <th id="c67"><span>67</span></th>
+                <th id="c68">68<img src="s10.png" alt="s68" id="s68"></th>
+                <th id="c69">69<img src="s9.png" alt="s69" id="s69"></th>
+                <th id="c70"><span>70</span></th>
+            </tr>
+
+            <tr>
+                <th id="c60"><span>60</span></th>
+                <th id="c59">59<img src="s8.png" alt="s59" id="s59"></th>
+                <th id="c58"><span>58</span></th>
+                <th id="c57"><span>57</span><img src="lad38.png" alt="l57" id="l57"></th>
+                <th id="c56"><span>56</span></th>
+                <th id="c55"><span>55</span></th>
+                <th id="c54"><span>54</span></th>
+                <th id="c53"><span>53</span><img src="lad53.png" alt="l53" id="l53"></th>
+                <th id="c52">52<img src="s2.png" alt="s52" id="s52"></th>
+                <th id="c51"><span>51</span></th>
+            </tr>
+
+            <tr>
+                <th id="c41"><span>41</span></th>
+                <th id="c42"><span>42</span></th>
+                <th id="c43"><span>43</span></th>
+                <th id="c44"><span>44</span></th>
+                <th id="c45"><span>45</span></th>
+                <th id="c46">46<img src="s4.png" alt="s46" id="s46"></th>
+                <th id="c47"><span>47</span></th>
+                <th id="c48">48<img src="s5.png" alt="s48" id="s48"></th>
+                <th id="c49"><span>49</span></th>
+                <th id="c50"><span>50</span></th>
+            </tr>
+
+            <tr>
+                <th id="c40"><span>40</span></th>
+                <th id="c39"><span>39</span></th>
+                <th id="c38"><span>38</span><img src="lad38.png" alt="l38" id="l38"></th>
+                <th id="c37"><span>37</span></th>
+                <th id="c36"><span>36</span></th>
+                <th id="c35"><span>35</span></th>
+                <th id="c34"><span>34</span></th>
+                <th id="c33"><span>33</span></th>
+                <th id="c32"><span>32</span></th>
+                <th id="c31"><span>31</span></th>
+            </tr>
+
+            <tr>
+                <th id="c21"><span>21</span></th>
+                <th id="c22"><span>22</span></th>
+                <th id="c23"><span>23</span></th>
+                <th id="c24"><span>24</span></th>
+                <th id="c25"><span>25</span></th>
+                <th id="c26"><span>26</span><img src="lad53.png" alt="l26" id="l26"></th>
+                <th id="c27"><span>27</span></th>
+                <th id="c28"><span>28</span></th>
+                <th id="c29"><span>29</span></th>
+                <th id="c30"><span>30</span></th>
+            </tr>
+
+            <tr>
+                <th id="c20"><span>20</span></th>
+                <th id="c19"><span>19</span></th>
+                <th id="c18"><span>18</span></th>
+                <th id="c17"><span>17</span></th>
+                <th id="c16"><span>16</span></th>
+                <th id="c15"><span>15</span></th>
+                <th id="c14"><span>14</span></th>
+                <th id="c13"><span>13</span></th>
+                <th id="c12"><span>12</span></th>
+                <th id="c11"><span>11</span></th>
+            </tr>
+
+            <tr>
+                <th id="c01"><span>1</span>
+                    <div id="tokenu"></div>
+                    <div id="tokend"></div>
+                </th>
+                <th id="c02"><span>2</span></th>
+                <th id="c03"><span>3</span></th>
+                <th id="c04"><span>4</span></th>
+                <th id="c05"><span>5</span></th>
+                <th id="c06"><span>6</span></th>
+                <th id="c07"><span>7</span></th>
+                <th id="c08"><span>8</span></th>
+                <th id="c09"><span>9</span></th>
+                <th id="c10"><span>10</span></th>
+            </tr>
+        </table>
+        <div id="covd"></div>
+        <div id="ncovd"></div>
+        <div id="diced" onclick="roll('d')">
+            <img src="die6.png" alt="DICE">
+        </div>
+        <div id="named"></div>
+    </div>
+</body>
+
+</html>
