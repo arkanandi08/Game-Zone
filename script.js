@@ -55,6 +55,10 @@ function play(gm) {
     if (gm == 'ludo') {
         window.location.href = "/Ludo/ludo.html"
     }
+        if (gm == 'pag') {
+        window.location.href = "/Pokemon/Pokemon Ash Gray.html"
+    }
+
     if (gm == 'pokemon') {
         window.location.href = "/Pokemon/game.html"
     }

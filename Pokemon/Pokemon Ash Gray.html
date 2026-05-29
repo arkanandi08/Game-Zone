@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Pokemon Ash Gray</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      background:#0f172a;
+      overflow:hidden;
+      font-family:Arial, sans-serif;
+    }
+
+    /* Top Bar */
+    .topbar{
+      position:fixed;
+      top:0;
+      left:0;
+      width:100%;
+      height:55px;
+      background:rgba(0,0,0,0.7);
+      backdrop-filter:blur(10px);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:0 18px;
+      z-index:1000;
+      color:white;
+    }
+
+    .title{
+      font-size:18px;
+      font-weight:bold;
+    }
+
+    .fullscreen-btn{
+      background:#2563eb;
+      border:none;
+      color:white;
+      padding:10px 16px;
+      border-radius:10px;
+      cursor:pointer;
+      font-size:14px;
+      transition:0.2s;
+    }
+
+    .fullscreen-btn:hover{
+      transform:scale(1.05);
+      background:#1d4ed8;
+    }
+
+    /* Game Container */
+    .game-container{
+      position:fixed;
+      top:55px;
+      left:0;
+      width:100%;
+      height:calc(100vh - 55px);
+    }
+
+    iframe{
+      width:100%;
+      height:100%;
+      border:none;
+      background:black;
+    }
+
+    /* Mobile */
+    @media(max-width:768px){
+      .title{
+        font-size:15px;
+      }
+
+      .fullscreen-btn{
+        padding:8px 12px;
+        font-size:12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="topbar">
+    <div class="title">🎮 Pokémon Ash Gray</div>
+
+    <button class="fullscreen-btn" onclick="goFullscreen()">
+      Fullscreen
+    </button>
+  </div>
+
+  <div class="game-container" id="gameContainer">
+
+    <iframe
+      src="https://pokemongames.games/embed/pokemon-ash-gray-game"
+      allowfullscreen>
+    </iframe>
+
+  </div>
+
+  <script>
+    function goFullscreen() {
+      const elem = document.getElementById("gameContainer");
+
+      if (elem.requestFullscreen) {
+        elem.requestFullscreen();
+      } 
+      else if (elem.webkitRequestFullscreen) {
+        elem.webkitRequestFullscreen();
+      } 
+      else if (elem.msRequestFullscreen) {
+        elem.msRequestFullscreen();
+      }
+    }
+  </script>
+
+</body>
+</html>
