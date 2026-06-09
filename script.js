@@ -58,8 +58,10 @@ function play(gm) {
         if (gm == 'pag') {
         window.location.href = "/Pokemon/Pokemon Ash Gray.html"
     }
-
     if (gm == 'pokemon') {
         window.location.href = "/Pokemon/game.html"
+    }
+    if (gm == 'tictactoe') {
+        window.location.href = "/tic-tac-toe/game.html"
     }
 }

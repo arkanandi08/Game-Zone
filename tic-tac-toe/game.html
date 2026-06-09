@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="load()">
+    <div id="game-area">
+        <table id="game-board">
+            <tr>
+                <td id="c0" onclick="mark(0)">
+                    <div class="O" id="0o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="0x"><i class="fa fa-times"></i></div>
+                    <div id="0" class="label"></div>
+                </td>
+                <td id="c1" onclick="mark(1)">
+                    <div class="O" id="1o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="1x"><i class="fa fa-times"></i></div>
+                    <div id="1" class="label"></div>
+                </td>
+                <td id="c2" onclick="mark(2)">
+                    <div class="O" id="2o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="2x"><i class="fa fa-times"></i></div>
+                    <div id="2" class="label"></div>
+                </td>
+            </tr>
+            <tr>
+                <td id="c3" onclick="mark(3)">
+                    <div class="O" id="3o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="3x"><i class="fa fa-times"></i></div>
+                    <div id="3" class="label"></div>
+                </td>
+                <td id="c4" onclick="mark(4)">
+                    <div class="O" id="4o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="4x"><i class="fa fa-times"></i></div>
+                    <div id="4" class="label"></div>
+                </td>
+                <td id="c5" onclick="mark(5)">
+                    <div class="O" id="5o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="5x"><i class="fa fa-times"></i></div>
+                    <div id="5" class="label"></div>
+                </td>
+            </tr>
+            <tr>
+                <td id="c6" onclick="mark(6)">
+                    <div class="O" id="6o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="6x"><i class="fa fa-times"></i></div>
+                    <div id="6" class="label"></div>
+                </td>
+                <td id="c7" onclick="mark(7)">
+                    <div class="O" id="7o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="7x"><i class="fa fa-times"></i></div>
+                    <div id="7" class="label"></div>
+                </td>
+                <td id="c8" onclick="mark(8)">
+                    <div class="O" id="8o"><i class="fa fa-circle-o"></i></div>
+                    <div class="X" id="8x"><i class="fa fa-times"></i></div>
+                    <div id="8" class="label"></div>
+                </td>
+            </tr>
+        </table>
+        <div id="author">-Arka Nandi</div>
+        <div id="start">
+            TIC<br>TAC<br>TOE<br><br>
+            <button class="play" onclick="next()"><i class="fa fa-play"></i></button>
+        </div>
+        <form id="choose" action="javascript:void(0);" onsubmit="play()">
+            No. of Times (odd): <input type="number" id="nt" min="1" max="99" value="1" onchange="makeitOdd(this)"
+                required><br><br>
+            <div class="px"><i class="fa fa-times"></i></div>
+            Player 1 Name:<br><input type="text" id="p1" maxlength="10" placeholder="Enter your name" required><br><br>
+            <div class="po"><i class="fa fa-circle-o"></i></div>
+            Player 2 Name:<br><input type="text" id="p2" maxlength="10" placeholder="Enter your name" required><br><br>
+            <button class="play" type="submit"><i class="fa fa-play"></i></button>
+        </form>
+    </div>
+    <div id="extra">
+        <button id="pause" onclick="pause()"><i class="fa fa-pause"></i></button>
+        <div id="nameu">
+            <div id="naam1"></div> (<i class="fa fa-times"></i>)<br>
+            <div id="o">0</div>/<div id="perx"></div>
+        </div>
+        <div id="named">
+            <div id="naam2"></div> (<i class="fa fa-circle-o"></i>)<br>
+            <div id="x">0</div>/<div id="pero"></div>
+        </div>
+        <div id="turnx"></div>
+        <div id="turno"></div>
+    </div>
+    <div id="psediv">
+        <div id="psebox"><br>
+            Game Paused!<br><br>
+            <table class="psebarea">
+                <tr>
+                    <td><button class="psebut" onclick="pause()"><i class="fa fa-play"></i></button></td>
+                    <td><button class="psebut" onclick="restart()"><i class="fa fa-refresh"></i></button></td>
+                    <td><button class="psebut" onclick="location.reload()"><i class="fa fa-sign-out"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Resume</td>
+                    <td>Restart</td>
+                    <td>Exit</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="cov">
+        <div id="covd">Congratulations!! <div id="iwinner"></div> wins!</div>
+        <div id="draw">It's a draw!!</div>
+    </div>
+    <div id="winner">
+        <div id="win1"></div>
+        <div id="win2"></div>
+        <img src="/2pwinner.png" alt="Winner card" id="winnerimg">
+        <table class="psebarea winbut">
+            <tr>
+                <td><button class="psebut" onclick="home()"><i class="fa fa-home"></i></button></td>
+                <td><button class="psebut" onclick="replay()"><i class="fa fa-undo"></i></button></td>
+                <td><button class="psebut" onclick="location.reload()"><i class="fa fa-sign-out"></i></button></td>
+            </tr>
+                <tr>
+                    <td>Home</td>
+                    <td>Replay</td>
+                    <td>Exit</td>
+                </tr>
+        </table>
+    </div>
+</body>
+
+</html>

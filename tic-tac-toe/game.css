@@ -1,0 +1,542 @@
+@media only screen and (max-width : 100vh) {
+
+    .X,
+    .O {
+        font-size: 15vw;
+        -webkit-text-stroke-width: 0.5vw;
+    }
+
+    #nameu {
+        top: 2vh;
+    }
+
+    #named {
+        bottom: 2vh;
+    }
+
+    #nameu,
+    #named {
+        font-size: 6vw;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60vw;
+    }
+
+    #turnx,
+    #turno {
+        margin-left: -40vw;
+        left: 50%;
+        height: 7vw;
+        width: 7vw;
+    }
+
+    #turnx {
+        top: 2.5vh;
+        margin-top: 2.5vw;
+    }
+
+    #turno {
+        bottom: 2.5vh;
+        margin-bottom: 2.5vw;
+    }
+
+    #game-area {
+        width: 96vw;
+        border-width: 2vw;
+    }
+
+    #start {
+        font-size: 15vw;
+    }
+
+    #choose {
+        font-size: 7vw;
+        width: 100vw;
+    }
+
+    #p1,
+    #p2,
+    #nt {
+        font-size: 5vw;
+    }
+
+    .play {
+        font-size: 10vw;
+        padding: 2vw 9vw;
+        border: 2vw solid #00003d;
+        border-radius: 5vw;
+    }
+
+    #psebox {
+        font-size: 10vw;
+        border-radius: 5vw;
+    }
+
+    .psebarea {
+        font-size: 4vw;
+        width: 70vw;
+    }
+
+    .psebut {
+        font-size: 5vw;
+    }
+
+    .psebarea td {
+        width: calc(100% / 3);
+    }
+
+    #author {
+        font-size: 5vw;
+    }
+
+    #winner {
+        width: 100vw;
+        height: 100vh;
+    }
+
+    #winnerimg {
+        width: 100%;
+    }
+
+    #win1,
+    #win2 {
+        font-size: 9vw;
+    }
+}
+
+@media only screen and (min-width : 100vh) {
+
+    .X,
+    .O {
+        font-size: 15vh;
+        -webkit-text-stroke-width: 0.5vh;
+    }
+
+    #nameu {
+        left: 10vh;
+        transform: translateX(-10vh);
+        top: 50%;
+    }
+
+    #named {
+        right: 10vh;
+        top: 50%;
+        transform: translateX(10vh);
+    }
+
+    #nameu,
+    #named {
+        font-size: 4vh;
+        width: 40vh;
+    }
+
+    #turnx,
+    #turno {
+        margin-top: 38vh;
+        height: 5vh;
+        width: 5vh;
+    }
+
+    #turnx {
+        left: 16.5vh;
+    }
+
+    #turno {
+        right: 16.5vh;
+    }
+
+    #game-area {
+        height: 96vh;
+        border-width: 2vw;
+    }
+
+    #start {
+        font-size: 15vh;
+    }
+
+    #choose {
+        font-size: 7vh;
+        width: 100vh;
+    }
+
+    #p1,
+    #p2,
+    #nt {
+        font-size: 5vh;
+    }
+
+
+    .play {
+        font-size: 10vh;
+        padding: 2vh 9vh;
+        border: 2vh solid #00003d;
+        border-radius: 5vh;
+    }
+
+    #psebox {
+        font-size: 10vh;
+        border-radius: 5vh;
+    }
+
+    .psebarea {
+        font-size: 4vh;
+        width: 70vh;
+    }
+
+    .psebut {
+        font-size: 5vh;
+    }
+
+    .psebarea td {
+        width: calc(100% / 3);
+    }
+
+    #author {
+        font-size: 4vh;
+    }
+
+    #winner {
+        height: 100vh;
+    }
+
+    #winnerimg {
+        height: 100%;
+    }
+
+    #win1,
+    #win2 {
+        font-size: 7.5vh;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url("spacebg.png");
+    color: #ffffff;
+}
+
+#game-area {
+    background: url("wood.png");
+    aspect-ratio: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: outset;
+    border-color: #ff7b00;
+}
+
+#game-board {
+    border-collapse: collapse;
+    border: none;
+    width: 80%;
+    max-width: 70vh;
+    aspect-ratio: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+#game-board td {
+    height: calc(100% / 3);
+    width: calc(100% / 3);
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: #00003d;
+}
+
+#start {
+    font-weight: 900;
+    color: #8b1700;
+    -webkit-text-stroke-width: 0.2vh;
+    -webkit-text-stroke-color: #ffffff;
+    line-height: 0.9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play {
+    background-color: #1eff00;
+    color: #00003d;
+    -webkit-text-stroke-width: 0;
+    cursor: pointer;
+    box-shadow: 0 0 2vh #1eff00;
+    transition: all 0.2s ease-in-out;
+}
+
+.play:hover {
+    transform: scale(1.1);
+}
+
+.play:active {
+    background-color: #00003d;
+    color: #1eff00;
+    transform: scale(0.9);
+}
+
+#choose {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+#p1,
+#p2,
+#nt {
+    padding: 0.5vh;
+    border: none;
+    border-radius: 0.5vh;
+    width: 60vw;
+    max-width: 60vh;
+    height: 5vw;
+    max-height: 5vh;
+    background-color: #ff7b00;
+    color: #00003d;
+    -webkit-text-stroke-width: 0;
+    font-weight: 900;
+}
+
+#nt {
+    width: 20vw;
+    max-width: 20vh;
+    position: relative;
+}
+
+.X,
+.O {
+    display: none;
+    -webkit-text-stroke-color: white;
+}
+
+.X,
+.px {
+    color: #ff0000;
+}
+
+.O,
+.po {
+    color: #0011ff;
+}
+
+.px,
+.po {
+    display: inline-block;
+    -webkit-text-stroke-color: white;
+    -webkit-text-stroke-width: 1px;
+}
+
+.label {
+    display: none;
+}
+
+#c3,
+#c4,
+#c5 {
+    border-top: 1.5vh ridge #ff7b00;
+    border-bottom: 1.5vh groove #ff7b00;
+}
+
+#c1,
+#c4,
+#c7 {
+    border-left: 1.5vh ridge #ff7b00;
+    border-right: 1.5vh groove #ff7b00;
+}
+
+#nameu,
+#named {
+    position: fixed;
+    line-break: anywhere;
+    color: #ffffff;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+    padding: 1vh 0;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#nameu {
+    background: #ff0000;
+}
+
+#named {
+    background: #0011ff;
+}
+
+#pause {
+    padding: 1vh 2vh;
+    font-size: 3vh;
+    background-color: #1eff00;
+    color: #00003d;
+    border: none;
+    border-radius: 1.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: fixed;
+    top: 5vh;
+    right: 2vh;
+    z-index: 5;
+}
+
+#pause:hover {
+    transform: scale(1.1);
+}
+
+#pause:active {
+    transform: scale(0.95);
+}
+
+
+#cov {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    aspect-ratio: 1;
+    max-width: 100vh;
+    width: 100%;
+}
+
+#covd,
+#draw {
+    background-color: #00003d;
+    padding: 2vh 4vh;
+    font-size: 5vh;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#draw {
+    display: none;
+}
+
+#turnx,
+#turno {
+    position: fixed;
+    background-color: #1eff00;
+    border-radius: 50%;
+    border: 1vh solid #0022ff;
+}
+
+#turno {
+    display: none;
+}
+
+#psediv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+#psebox {
+    background-color: #00003d;
+    padding: 2vh 4vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.psebut {
+    background-color: #1eff00;
+    color: #00003d;
+    border: none;
+    border-radius: 1.5vh;
+    padding: 1vh 2vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 2vh;
+}
+
+.psebut:hover {
+    transform: scale(1.1);
+}
+
+.psebut:active {
+    transform: scale(0.95);
+}
+
+#author {
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+    color: #ffffff;
+    z-index: 3;
+    font-weight: bold;
+    text-shadow: 0 0 5px #1eff00;
+}
+
+#naam1,
+#naam2,
+#perx,
+#pero,
+#x,
+#o {
+    display: inline-block;
+}
+
+#extra {
+    display: none;
+}
+
+#winner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#win1,
+#win2 {
+    position: absolute;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 5px #1eff00;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-20%);
+}
+
+#win1 {
+    top: 41%;
+}
+
+#win2 {
+    top: 76%;
+}
+
+#winnerimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.winbut {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
