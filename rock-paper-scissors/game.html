@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="/2pcommon.css">
+    <script src="game.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="load()">
+    <div id="game-area">
+        <table id="game-board">
+            <tr>
+                <th colspan="3">
+                    <h2>CHOOSE ANY ONE!!</h2>
+                </th>
+            </tr>
+            <tr>
+                <td onclick="check(1)">
+                    <i class="fa fa-hand-rock-o"></i><br>
+                    ROCK
+                </td>
+                <td onclick="check(2)">
+                    <i class="fa fa-hand-paper-o"></i><br>
+                    PAPER
+                </td>
+                <td onclick="check(3)">
+                    <i class="fa fa-hand-scissors-o"></i><br>
+                    SCISSORS
+                </td>
+            </tr>
+        </table>
+        <div id="author">-Arka Nandi</div>
+        <div id="start">
+            ROCK<br>PAPER<br>SCISSOR<br><br>
+            <button class="play" onclick="next()"><i class="fa fa-play"></i></button>
+        </div>
+        <form id="choose" action="javascript:void(0);" onsubmit="play()" name="f1">
+            Player Name:<br><input type="text" id="p1" maxlength="10" placeholder="Enter your name" required><br><br>
+            <div id="radiodiv">
+                <input type="radio" name="r1" value="times" class="radio" checked>
+                Target Score: <input type="number" id="nt" min="1" max="1000" value="10" required><br>
+                <input type="radio" name="r1" value="infinite" class="radio">
+                Infinite Times!!<br><br>
+            </div>
+            <button class="play" type="submit"><i class="fa fa-play"></i></button>
+        </form>
+    </div>
+    <div id="extra">
+        <button id="pause" onclick="pause()"><i class="fa fa-pause"></i></button>
+        <div id="nameu">
+            <div id="naam1"></div> (<i class="fa fa-times"></i>)<br>
+            <div id="u">0</div>/<div id="peru"></div>
+        </div>
+        <div id="named">
+            <div id="naam2"></div> (<i class="fa fa-circle-o"></i>)<br>
+            <div id="d">0</div>/<div id="perd"></div>
+        </div>
+    </div>
+    <div id="psediv">
+        <div id="psebox"><br>
+            Game Paused!<br><br>
+            <table class="psebarea">
+                <tr>
+                    <td><button class="psebut" onclick="pause()"><i class="fa fa-play"></i></button></td>
+                    <td><button class="psebut" onclick="restart()"><i class="fa fa-refresh"></i></button></td>
+                    <td><button class="psebut" onclick="winner()"><i class="fa fa-sign-out"></i></button></td>
+                </tr>
+                <tr>
+                    <td>Resume</td>
+                    <td>Restart</td>
+                    <td>Exit</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <div id="tie">
+        Play TIE BRAKER??<br>
+        <button class="psebut" onclick="tiebreak('y')"><b>YES!</b></button>
+        <button class="psebut" onclick="tiebreak('n')"><b>NO?</b></button>
+    </div>
+    <div id="cov">
+        <div id="covd">
+            <h1 style="color: aqua;">RESULT</h1>
+            <hr><br>
+            <table id="score">
+                <tr>
+                    <td style="border-right: 0.2vh solid #ffffff;">
+                        <div id="player"></div>(You)<br><br>
+                        <div id="popt"></div>
+                    </td>
+                    <td>
+                        COMPUTER<br><br><br>
+                        <div id="copt"></div>
+                    </td>
+                </tr>
+            </table><br>
+            <h2 id="uwin">YOU WIN!!</h2>
+            <h2 id="ulos">YOU LOSE</h2>
+            <h2 id="udraw">DRAW</h2>
+        </div>
+        <div id="draw">It's a draw!!</div>
+    </div>
+    <div id="winner">
+        <div id="win1"></div>
+        <div id="win2"></div>
+        <img src="/2pwinner.png" alt="Winner card" id="winnerimg">
+        <table class="psebarea winbut">
+            <tr>
+                <td><button class="psebut" onclick="home()"><i class="fa fa-home"></i></button></td>
+                <td><button class="psebut" onclick="replay()"><i class="fa fa-undo"></i></button></td>
+                <td><button class="psebut" onclick="location.reload()"><i class="fa fa-sign-out"></i></button></td>
+            </tr>
+            <tr>
+                <td>Home</td>
+                <td>Replay</td>
+                <td>Exit</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

@@ -1,11 +1,5 @@
 @media only screen and (max-width : 100vh) {
 
-    .X,
-    .O {
-        font-size: 15vw;
-        -webkit-text-stroke-width: 0.5vw;
-    }
-
     #nameu {
         top: 2vh;
     }
@@ -22,24 +16,6 @@
         width: 60vw;
     }
 
-    #turn1,
-    #turn2 {
-        margin-left: -40vw;
-        left: 50%;
-        height: 7vw;
-        width: 7vw;
-    }
-
-    #turn1 {
-        top: 2.5vh;
-        margin-top: 2.5vw;
-    }
-
-    #turn2 {
-        bottom: 2.5vh;
-        margin-bottom: 2.5vw;
-    }
-
     #game-area {
         width: 96vw;
         border-width: 2vw;
@@ -50,14 +26,14 @@
     }
 
     #choose {
-        font-size: 7vw;
+        font-size: 9vw;
         width: 100vw;
     }
 
     #p1,
     #p2,
     #nt {
-        font-size: 5vw;
+        font-size: 6vw;
     }
 
     .play {
@@ -112,15 +88,34 @@
     #win2 {
         margin-top: 32vw;
     }
+
+    .radio {
+        width: 6vw;
+        height: 6vw;
+    }
+
+    #game-board {
+        border-spacing: 3vw 0;
+        font-size: 5vw;
+    }
+
+    #game-board i {
+        font-size: 18vw !important;
+    }
+
+    #game-board td {
+        border-radius: 5vw;
+        padding: 2vw;
+    }
+    
+    #covd{
+        font-size: 5vw;
+        width: 80vw;
+        font-weight: bold;
+    }
 }
 
 @media only screen and (min-width : 100vh) {
-
-    .X,
-    .O {
-        font-size: 15vh;
-        -webkit-text-stroke-width: 0.5vh;
-    }
 
     #nameu {
         left: 10vh;
@@ -140,21 +135,6 @@
         width: 40vh;
     }
 
-    #turn1,
-    #turn2 {
-        margin-top: 38vh;
-        height: 5vh;
-        width: 5vh;
-    }
-
-    #turn1 {
-        left: 16.5vh;
-    }
-
-    #turn2 {
-        right: 16.5vh;
-    }
-
     #game-area {
         height: 96vh;
         border-width: 2vw;
@@ -165,14 +145,14 @@
     }
 
     #choose {
-        font-size: 7vh;
+        font-size: 9vh;
         width: 100vh;
     }
 
     #p1,
     #p2,
     #nt {
-        font-size: 5vh;
+        font-size: 6vh;
     }
 
 
@@ -226,74 +206,73 @@
     #win2 {
         top: 76%;
     }
+
+    .radio {
+        width: 6vh;
+        height: 6vh;
+    }
+
+    #game-board {
+        border-spacing: 3vh 0;
+        font-size: 5vh;
+    }
+    
+    #game-board td {
+        border-radius: 5vh;
+        padding: 2vh;
+    }
+
+    #game-board i {
+        font-size: 18vh !important;
+    }
+    
+    #covd{
+        font-size: 5vh;
+        width: 80vh;
+        font-weight: bold;
+    }
 }
 
 #game-board {
-    aspect-ratio: 1;
-    border-collapse: collapse;
+    border-collapse: separate;
     border: none;
-    width: 80%;
-    max-width: 70vh;
+    width: 100%;
+    max-width: 100vh;
 }
 
 #game-board td {
-    height: calc(100% / 3);
     width: calc(100% / 3);
-    font-size: 24px;
     font-weight: bold;
     cursor: pointer;
-    box-shadow: #00003d;
+    background: #00003d;
+    transition: all 0.1s ease;
 }
 
-.X,
-.O {
-    display: none;
-    -webkit-text-stroke-color: white;
+#game-board td:hover{
+    transform: scale(1.1);
 }
 
-.X,
-.px {
-    color: #ff0000;
+#game-board td:active{
+    transform: scale(0.9);
 }
 
-.O,
-.po {
-    color: #0011ff;
+#score {
+    width: 100%;
+    border-collapse: collapse;
+    border: none;
 }
 
-.px,
-.po {
-    display: inline-block;
-    -webkit-text-stroke-color: white;
-    -webkit-text-stroke-width: 1px;
-}
-
-.label {
+#uwin{
+    color: #86ff2f;
     display: none;
 }
 
-#c3,
-#c4,
-#c5 {
-    border-top: 1.5vh ridge #ff7b00;
-    border-bottom: 1.5vh groove #ff7b00;
+#ulos {
+    color: red;
+    display: none;
 }
 
-#c1,
-#c4,
-#c7 {
-    border-left: 1.5vh ridge #ff7b00;
-    border-right: 1.5vh groove #ff7b00;
-}
-
-#perx,
-#pero,
-#x,
-#o {
-    display: inline-block;
-}
-
-#covd,
-#draw {
-    font-size: 5vh;
+#udraw {
+    color: aqua;
+    display: none;
 }

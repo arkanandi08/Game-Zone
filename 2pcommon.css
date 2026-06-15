@@ -1,0 +1,278 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: url("/spacebg.png");
+    color: #ffffff;
+}
+
+#game-area {
+    background: url("/wood.png");
+    aspect-ratio: 1;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-style: outset;
+    border-color: #ff7b00;
+}
+
+#game-board {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    visibility: hidden;
+}
+
+#start {
+    font-weight: 900;
+    color: #8b1700;
+    -webkit-text-stroke-width: 0.2vh;
+    -webkit-text-stroke-color: #ffffff;
+    line-height: 0.9;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.play {
+    background-color: #1eff00;
+    color: #00003d;
+    -webkit-text-stroke-width: 0;
+    cursor: pointer;
+    box-shadow: 0 0 2vh #1eff00;
+    transition: all 0.2s ease-in-out;
+}
+
+.play:hover {
+    transform: scale(1.1);
+}
+
+.play:active {
+    background-color: #00003d;
+    color: #1eff00;
+    transform: scale(0.9);
+}
+
+#choose {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+}
+
+#p1,
+#p2,
+#nt {
+    padding: 0.5vh;
+    border: none;
+    border-radius: 0.5vh;
+    width: 80vw;
+    max-width: 80vh;
+    background-color: #ff7b00;
+    color: #00003d;
+    -webkit-text-stroke-width: 0;
+    font-weight: 900;
+}
+
+#nt {
+    width: 20vw;
+    max-width: 20vh;
+    position: relative;
+}
+
+#nameu,
+#named {
+    position: fixed;
+    line-break: anywhere;
+    color: #ffffff;
+    clip-path: polygon(0% 0%, 100% 0%, 90% 50%, 100% 100%, 0% 100%, 10% 50%);
+    padding: 1vh 0;
+    font-weight: bold;
+    display: inline-block;
+}
+
+#nameu {
+    background: #ff0000;
+}
+
+#named {
+    background: #0011ff;
+}
+
+#pause {
+    padding: 1vh 2vh;
+    font-size: 3vh;
+    background-color: #1eff00;
+    color: #00003d;
+    border: none;
+    border-radius: 1.5vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: fixed;
+    top: 5vh;
+    right: 2vh;
+    z-index: 5;
+}
+
+#pause:hover {
+    transform: scale(1.1);
+}
+
+#pause:active {
+    transform: scale(0.95);
+}
+
+
+#cov {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+    aspect-ratio: 1;
+    max-width: 100vh;
+    width: 100%;
+}
+
+#covd,
+#draw {
+    background-color: #00003d;
+    padding: 2vh 4vh;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+}
+
+#draw,
+#tie {
+    display: none;
+}
+
+#turn1,
+#turn2 {
+    position: fixed;
+    background-color: #1eff00;
+    border-radius: 50%;
+    border: 1vh solid #0022ff;
+}
+
+#turn2 {
+    display: none;
+}
+
+#psediv {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    z-index: 2;
+    backdrop-filter: blur(5px);
+}
+
+#psebox,
+#tie {
+    background-color: #00003d;
+    padding: 2vh 4vh;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+.psebut {
+    background-color: #1eff00;
+    color: #00003d;
+    border: none;
+    border-radius: 1.5vh;
+    padding: 1vh 2vh;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 2vh;
+}
+
+.psebut:hover {
+    transform: scale(1.1);
+}
+
+.psebut:active {
+    transform: scale(0.95);
+}
+
+#author {
+    position: absolute;
+    bottom: 1vh;
+    right: 1vh;
+    color: #ffffff;
+    z-index: 3;
+    font-weight: bold;
+    text-shadow: 0 0 5px #1eff00;
+}
+
+#naam1,
+#naam2 {
+    display: inline-block;
+}
+
+#extra {
+    display: none;
+}
+
+#winner {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+#win1,
+#win2 {
+    position: absolute;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 0 0 5px #1eff00;
+    z-index: 3;
+    left: 50%;
+    transform: translateX(-20%);
+}
+
+
+#winnerimg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.winbut {
+    position: fixed;
+    bottom: 2vh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+}
+
+#radiodiv{
+    text-align: left;
+    display: inline-block;
+}
+
+.radio{
+    cursor: pointer;
+}
+
+#peru, #perd, #u, #d{
+    display: inline-block;
+}

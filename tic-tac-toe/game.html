@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic Tac Toe</title>
     <link rel="stylesheet" href="game.css">
+    <link rel="stylesheet" href="/2pcommon.css">
     <script src="game.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -71,8 +72,7 @@
             <button class="play" onclick="next()"><i class="fa fa-play"></i></button>
         </div>
         <form id="choose" action="javascript:void(0);" onsubmit="play()">
-            No. of Times (odd): <input type="number" id="nt" min="1" max="99" value="1" onchange="makeitOdd(this)"
-                required><br><br>
+            No. of Times: <input type="number" id="nt" min="1" max="999" value="5" required><br><br>
             <div class="px"><i class="fa fa-times"></i></div>
             Player 1 Name:<br><input type="text" id="p1" maxlength="10" placeholder="Enter your name" required><br><br>
             <div class="po"><i class="fa fa-circle-o"></i></div>
@@ -90,8 +90,8 @@
             <div id="naam2"></div> (<i class="fa fa-circle-o"></i>)<br>
             <div id="x">0</div>/<div id="pero"></div>
         </div>
-        <div id="turnx"></div>
-        <div id="turno"></div>
+        <div id="turn1"></div>
+        <div id="turn2"></div>
     </div>
     <div id="psediv">
         <div id="psebox"><br>
@@ -100,15 +100,20 @@
                 <tr>
                     <td><button class="psebut" onclick="pause()"><i class="fa fa-play"></i></button></td>
                     <td><button class="psebut" onclick="restart()"><i class="fa fa-refresh"></i></button></td>
-                    <td><button class="psebut" onclick="location.reload()"><i class="fa fa-sign-out"></i></button></td>
+                    <td><button class="psebut" onclick="winner()"><i class="fa fa-sign-out"></i></button></td>
                 </tr>
                 <tr>
                     <td>Resume</td>
                     <td>Restart</td>
-                    <td>Exit</td>
+                    <td>End</td>
                 </tr>
             </table>
         </div>
+    </div>
+    <div id="tie">
+        Play TIE BRAKER??<br>
+        <button class="psebut" onclick="tiebreak('y')"><b>YES!</b></button>
+        <button class="psebut" onclick="tiebreak('n')"><b>NO?</b></button>
     </div>
     <div id="cov">
         <div id="covd">Congratulations!! <div id="iwinner"></div> wins!</div>
