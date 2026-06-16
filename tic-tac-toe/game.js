@@ -120,6 +120,7 @@ function play() {
     nameu = document.getElementById("p1").value.toUpperCase();
     named = document.getElementById("p2").value.toUpperCase();
     times = document.getElementById("nt").value;
+    etimes = times;
     document.getElementById("game-board").style.visibility = "visible";
     document.getElementById("choose").style.display = "none";
     document.getElementById("extra").style.display = "block";
@@ -134,16 +135,16 @@ function winner() {
     var p1 = document.getElementById("o").innerText;
     var p2 = document.getElementById("x").innerText;
     if (p1 > p2) {
-        document.getElementById("win1").innerText = nameu;
-        document.getElementById("win2").innerText = named;
+        document.getElementById("win1").innerHTML = "<div class='score'>(" + p1 + "/" + times + ")</div>" + nameu;
+        document.getElementById("win2").innerHTML = "<div class='score'>(" + p2 + "/" + times + ")</div>" + named;
     }
     else if (p2 > p1) {
-        document.getElementById("win1").innerText = named;
-        document.getElementById("win2").innerText = nameu;
+        document.getElementById("win1").innerHTML = "<div class='score'>(" + p2 + "/" + times + ")</div>" + named;
+        document.getElementById("win2").innerHTML = "<div class='score'>(" + p1 + "/" + times + ")</div>" + nameu;
     }
     else {
-        document.getElementById("win1").innerText = "DRAW";
-        document.getElementById("win2").innerText = "DRAW";
+        document.getElementById("win1").innerText = "<div class='score'>(" + p1 + "/" + times + ")</div>" + "DRAW";
+        document.getElementById("win2").innerText = "<div class='score'>(" + p2 + "/" + times + ")</div>" + "DRAW";
         window.setTimeout(tie, 2000);
     }
     document.getElementById("extra").style.display = "none";
@@ -173,6 +174,7 @@ function helper() {
     document.getElementById("winner").style.display = "none";
     document.getElementById("game-area").style.display = "block";
     document.getElementById("extra").style.display = "block";
+    restart();
 }
 
 function home() {
@@ -188,5 +190,4 @@ function home() {
 function replay() {
     times = etimes;
     helper();
-    restart();
 }

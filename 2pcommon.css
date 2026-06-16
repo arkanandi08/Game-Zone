@@ -244,8 +244,8 @@ body {
     color: #ffffff;
     text-shadow: 0 0 5px #1eff00;
     z-index: 3;
-    left: 50%;
-    transform: translateX(-20%);
+    left: 65%;
+    transform: translateX(-50%);
 }
 
 
@@ -275,4 +275,9 @@ body {
 
 #peru, #perd, #u, #d{
     display: inline-block;
+}
+
+.score {
+    font-size: smaller;
+    color: #eeff00;
 }

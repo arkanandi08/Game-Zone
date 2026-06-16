@@ -1,5 +1,4 @@
 let nameu, named, times, ctimes, etimes;
-nameu = "1234567890";
 named = "COMPUTER";
 ctimes = 0;
 
@@ -17,7 +16,6 @@ function chck() {
 function load() {
     document.getElementById("extra").style.display = "none";
     document.getElementById("game-board").style.visibility = "hidden";
-    document.getElementById("player").innerText = nameu;
     chck();
 }
 
@@ -33,7 +31,8 @@ function check(whi) {
     else if (whi == 3) {
         document.getElementById("popt").innerText = "SCISSORS";
     }
-    let comp = Math.floor(Math.random() * 3) + 1;
+    // let comp = Math.floor(Math.random() * 3) + 1;
+    let comp = 1;
     if (comp == 1) {
         document.getElementById("copt").innerText = "ROCK";
     }
@@ -69,9 +68,9 @@ function check(whi) {
     document.getElementById("cov").style.display = "block";
     document.getElementById("covd").style.display = "block";
     if (ctimes == times) {
-        window.setTimeout(winner, 3000);
+        window.setTimeout(winner, 300);
     } else {
-        window.setTimeout(chck, 3000);
+        window.setTimeout(chck, 300);
     }
 }
 
@@ -114,23 +113,24 @@ function play() {
     document.getElementById("naam2").innerText = named;
     document.getElementById("peru").innerText = times;
     document.getElementById("perd").innerText = times;
+    document.getElementById("player").innerText = nameu;
 }
 
 function winner() {
     document.getElementById("winner").style.display = "block";
-    var p1 = document.getElementById("u").innerText;
-    var p2 = document.getElementById("d").innerText;
+    var p1 = parseInt(document.getElementById("u").innerText);
+    var p2 = parseInt(document.getElementById("d").innerText);
     if (p1 > p2) {
-        document.getElementById("win1").innerText = nameu;
-        document.getElementById("win2").innerText = named;
+        document.getElementById("win1").innerHTML = "<div class='score'>(" + p1 + "/" + times + ")</div>" + nameu;
+        document.getElementById("win2").innerHTML = "<div class='score'>(" + p2 + "/" + times + ")</div>" + named;
     }
     else if (p2 > p1) {
-        document.getElementById("win1").innerText = named;
-        document.getElementById("win2").innerText = nameu;
+        document.getElementById("win1").innerHTML = "<div class='score'>(" + p2 + "/" + times + ")</div>" + named;
+        document.getElementById("win2").innerHTML = "<div class='score'>(" + p1 + "/" + times + ")</div>" + nameu;
     }
     else {
-        document.getElementById("win1").innerText = "DRAW";
-        document.getElementById("win2").innerText = "DRAW";
+        document.getElementById("win1").innerHTML = "<div class='score'>(" + p1 + "/" + times + ")</div>" + "DRAW";
+        document.getElementById("win2").innerHTML = "<div class='score'>(" + p2 + "/" + times + ")</div>" + "DRAW";
         window.setTimeout(tie, 2000);
     }
     document.getElementById("extra").style.display = "none";
@@ -160,6 +160,7 @@ function helper() {
     document.getElementById("winner").style.display = "none";
     document.getElementById("game-area").style.display = "block";
     document.getElementById("extra").style.display = "block";
+    restart();
 }
 
 function home() {
@@ -175,5 +176,4 @@ function home() {
 function replay() {
     times = etimes;
     helper();
-    restart();
 }

@@ -82,11 +82,11 @@
     }
 
     #win1 {
-        margin-top: -10vw;
+        margin-top: -17vw;
     }
 
     #win2 {
-        margin-top: 32vw;
+        margin-top: 25vw;
     }
 
     .radio {
@@ -197,14 +197,15 @@
     #win1,
     #win2 {
         font-size: 7.5vh;
+        margin-left: 13vh;
     }
 
     #win1 {
-        top: 41%;
+        top: 36vh;
     }
 
     #win2 {
-        top: 76%;
+        top: 71vh;
     }
 
     .radio {
@@ -250,6 +251,7 @@
 
 #game-board td:hover{
     transform: scale(1.1);
+    box-shadow: 0 0 3vh 0 #000000;
 }
 
 #game-board td:active{
@@ -263,12 +265,12 @@
 }
 
 #uwin{
-    color: #86ff2f;
+    color: #1eff00;
     display: none;
 }
 
 #ulos {
-    color: red;
+    color: #ff0000;
     display: none;
 }
 

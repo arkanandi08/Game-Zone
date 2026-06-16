@@ -64,4 +64,7 @@ function play(gm) {
     if (gm == 'tictactoe') {
         window.location.href = "/tic-tac-toe/game.html"
     }
+    if (gm == 'rps') {
+        window.location.href = "/rock-paper-scissors/game.html"
+    }
 }
