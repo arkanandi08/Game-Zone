@@ -31,8 +31,7 @@ function check(whi) {
     else if (whi == 3) {
         document.getElementById("popt").innerText = "SCISSORS";
     }
-    // let comp = Math.floor(Math.random() * 3) + 1;
-    let comp = 1;
+    let comp = Math.floor(Math.random() * 3) + 1;
     if (comp == 1) {
         document.getElementById("copt").innerText = "ROCK";
     }
@@ -68,9 +67,9 @@ function check(whi) {
     document.getElementById("cov").style.display = "block";
     document.getElementById("covd").style.display = "block";
     if (ctimes == times) {
-        window.setTimeout(winner, 300);
+        window.setTimeout(winner, 3000);
     } else {
-        window.setTimeout(chck, 300);
+        window.setTimeout(chck, 3000);
     }
 }
 
@@ -98,6 +97,7 @@ function next() {
     document.getElementById("choose").style.display = "block";
     document.getElementById("p1").focus();
 }
+
 function play() {
     nameu = document.getElementById("p1").value.toUpperCase();
     if (f1.r1.value == "times") {
