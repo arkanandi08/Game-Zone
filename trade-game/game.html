@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MONOPOLY-Trading game</title>
+    <link rel="stylesheet" href="game.css">
+    <script src="game.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <div id="start">
+        <h1>
+            <div class="h1">MONOPOLY</div>
+        </h1>
+        <h6>The Property Trading Game</h6>
+        <article>
+            <ul style="text-align: left;">
+                <li>
+                    MONOPOLY is the classic property trading game.
+                </li><br>
+                <li>
+                    Make a deal: Buy, rent or sell properties!
+                </li><br>
+                <li>
+                    Make a fortune: Make money, but avoid being sent to jail!
+                </li>
+            </ul>
+            <hr><br>
+            The wealthiest player wins. Invest wisely and trade well to ensure the path to success!
+        </article><br>
+        <table class="startbut">
+            <tr>
+                <td>How To<br> Play?</td>
+                <td>Settings</td>
+                <td class="play" onclick="next()">PLAY!!</td>
+            </tr>
+        </table>
+    </div>
+    <form id="next" name="f1" action="javascript:void(0);" onsubmit="play()">
+        Number of players:<br>
+        <input type="radio" name="players" value="2p" onclick="playerno(2)">2P
+        <input type="radio" name="players" value="3p" onclick="playerno(3)">3P
+        <input type="radio" name="players" value="4p" checked onclick="playerno(4)">4P
+        <br><br>
+        <div id="p1">
+            Player 1 Name: <input type="text" maxlength="8" id="t1" required>
+            <select name="s1" onchange="optdis(1)" id="s1" required>
+                <option value="" disabled selected>Choose Token</option>
+                <option value=1>Horse</option>
+                <option value=2>Race Car</option>
+                <option value=3>Ship</option>
+                <option value=4>Shoe</option>
+                <option value=5>Iron</option>
+                <option value=6>Vintage Motor Car</option>
+            </select>
+        </div><br>
+        <div id="p2">
+            Player 2 Name: <input type="text" maxlength="8" id="t2" required>
+            <select name="s2" onchange="optdis(2)" id="s2" required>
+                <option value="" disabled selected>Choose Token</option>
+                <option value=1>Horse</option>
+                <option value=2>Race Car</option>
+                <option value=3>Ship</option>
+                <option value=4>Shoe</option>
+                <option value=5>Iron</option>
+                <option value=6>Vintage Motor Car</option>
+            </select>
+        </div><br>
+        <div id="p3">
+            Player 3 Name: <input type="text" maxlength="8" id="t3" required>
+            <select name="s3" onchange="optdis(3)" id="s3" required>
+                <option value="" disabled selected>Choose Token</option>
+                <option value=1>Horse</option>
+                <option value=2>Race Car</option>
+                <option value=3>Ship</option>
+                <option value=4>Shoe</option>
+                <option value=5>Iron</option>
+                <option value=6>Vintage Motor Car</option>
+            </select>
+        </div><br>
+        <div id="p4">
+            Player 4 Name: <input type="text" maxlength="8" id="t4" required>
+            <select name="s4" onchange="optdis(4)" id="s4" required>
+                <option value="" disabled selected>Choose Token</option>
+                <option value=1>Horse</option>
+                <option value=2>Race Car</option>
+                <option value=3>Ship</option>
+                <option value=4>Shoe</option>
+                <option value=5>Iron</option>
+                <option value=6>Vintage Motor Car</option>
+            </select>
+        </div><br>
+        <table class="startbut">
+            <tr>
+                <td onclick="back()">Back</td>
+                <td onclick="rset()">Reset</td>
+                <td class="play" onclick="nxtchck()">PLAY!!</td>
+            </tr>
+        </table>
+    </form>
+
+
+
+    <div id="game">
+        <table id="game-board">
+            <tr>
+                <td colspan="2" rowspan="2">GO TO JAIL</td>
+                <td rowspan="2">WATER WORKS<br><img src="tap.png" class="tap" alt="tap"><br>Rs.150</td>
+                <td>REGENT STREET<br><br>Rs.300</td>
+                <td>OXFORD STREET<br><br>Rs.300</td>
+                <td rowspan="2">COMMUNITY CHEST<br><br><img src="chest.png" class="chest" alt="chest"></td>
+                <td>BOND STREET<br><br>Rs.320</td>
+                <td rowspan="2">LIVERPOOL STREET<br><img src="train.png" class="train" alt="train"><br>Rs.200</td>
+                <td rowspan="2">CHANCE<br><br><i class="fa fa-question ques"></i></td>
+                <td>PARKLANE<br><br>Rs.350</td>
+                <td rowspan="2">SUPER TAX<br><br><img src="ring.png" class="ring" alt="ring"><br>PAY Rs.100</td>
+                <td>MAYFAIR<br><br>Rs.400</td>
+                <td colspan="2" rowspan="2">
+                    <div style="float: left;">COLLECT<br> Rs.200 SALARY<br> AS YOU PASS<div class="go">GO</div></div><i class="fa fa-long-arrow-down goarrow"></i>
+                </td>
+            </tr>
+            <tr>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+            </tr>
+            <tr>
+                <td>PICCADILLY<br><br>Rs.280</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td rowspan="8" colspan="10">
+                    <img src="horse.png" class="token" alt="horse">
+                    <img src="race car.png" class="token" alt="race car">
+                    <img src="motor car.png" class="token" alt="motot car">
+                    <img src="ship.png" class="token" alt="ship">
+                    <img src="iron.png" class="token" alt="iron">
+                    <img src="shoe.png" class="token" alt="shoe">
+                </td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td>OLD KENT ROAD<br><br>Rs.60</td>
+            </tr>
+            <tr>
+                <td>CONVENTRY STREET<br><br>Rs.260</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td>WHITECHAPEL ROAD<br><br>Rs.60</td>
+            </tr>
+            <tr>
+                <td>LEICESTER SQUARE<br><br>Rs.260</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td colspan="2">INCOME TAX<br><br>Rs.200</td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class="ltrain">FENCHURCH<br> ST.STATION<br>Rs.200</div><img src="train.png" class="trainl" alt="train"></td>
+                <td colspan="2"><div class="rtrain">KINGS CROSS <br>STATION<br>Rs.200</div><img src="train.png" class="trainr" alt="train"></td>
+            </tr>
+            <tr>
+                <td>TRAFALGAR SQUARE<br><br>Rs.240</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td>THE ANGEL ISLINGTON<br><br>Rs.240</td>
+            </tr>
+            <tr>
+                <td>FLEET STREET<br><br>Rs.240</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td colspan="2"><div class="rchest">COMMUNITY<br>CHEST</div><img src="chest.png" class="chestr" alt="chest"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><div class="ltrain">CHANCE</div><i class="fa fa-question quesl"></i></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td>EUSTON ROAD<br><br>Rs.100</td>
+            </tr>
+            <tr>
+                <td>STARND<br><br>Rs.220</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td>PENTONVILLE ROAD<br><br>Rs.120</td>
+            </tr>
+            <tr>
+                <td rowspan="2" colspan="2">FREE<br><img src="redcar.png" class="car" alt="parking"><br>PARKING</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td rowspan="2">COMMUNITY CHEST<br><br><img src="chest.png" class="chest" alt="chest"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td rowspan="2">MARYLEBONE STATION<br><img src="train.png" class="train" alt="train"><br>Rs.200</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td rowspan="2">ELECTRIC COMPANY<br><i class="fa fa-lightbulb-o bulb"></i><br>Rs.150</td>
+                <td><img src="hole.png" class="holes" alt="hole"></td>
+                <td rowspan="2">CHANCE<br><br><i class="fa fa-question ques"></i></td>
+                <td rowspan="2" colspan="2">IN JAIL<br><br>JUST VISITING</td>
+            </tr>
+            <tr>
+                <td>VINE STREET<br><br>Rs.200</td>
+                <td>MARLBO-ROUGH STREET<br><br>Rs.180</td>
+                <td>BOW STREET<br><br>Rs.180</td>
+                <td>NORTHUM-BERL'D AVENUE<br><br>Rs.160</td>
+                <td>WHITEHALL<br><br>Rs.140</td>
+                <td>PALL MALL<br><br>Rs.140</td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

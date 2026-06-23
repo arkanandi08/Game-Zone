@@ -1,0 +1,257 @@
+body {
+    font-size: 7vh;
+    padding: 3vh 0;
+}
+
+h1 {
+    border: 1vh solid black;
+    padding: 1.2vh 0;
+    text-shadow: -1vh 0vh 1vh black;
+}
+
+.h1 {
+    border-width: 1vh 0;
+    padding: 0 2vh;
+}
+
+h6 {
+    margin-top: 2vh;
+}
+
+article {
+    font-size: 4vh;
+    width: 70vh;
+    border: 1vh solid white;
+    padding: 0 1vh 5vh 0;
+    margin-top: -3vh;
+}
+
+.startbut {
+    font-size: 4vh;
+    margin-top: 2vh;
+    border-spacing: 3vh;
+}
+
+.startbut td {
+    width: 18vh;
+    border: 0.3vh solid black;
+    border-radius: 4vh;
+    padding: 1vh;
+    box-shadow: 0vh 1vh #1f1f1f;
+}
+
+input[type="text"],
+select {
+    font-size: 5vh;
+}
+
+input[type="radio"] {
+    width: 5vh;
+    height: 5vh;
+}
+
+
+* {
+    transition: all 0.2s ease-in-out;
+}
+
+#start,
+#next {
+    display: none;
+}
+
+body {
+    text-align: center;
+    background-color: red;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+}
+
+h1 {
+    display: inline;
+}
+
+.h1 {
+    border-color: #720101;
+    border-style: solid;
+    display: inline;
+    background-color: #aa0202;
+}
+
+article {
+    display: inline-block;
+    background-color: #aa0202;
+}
+
+.startbut {
+    display: inline-block;
+    border-collapse: separate;
+}
+
+.startbut td {
+    cursor: pointer;
+    background-color: #56014c;
+}
+
+.startbut td:hover {
+    transform: scale(1.1);
+}
+
+.startbut td:active {
+    transform: scale(0.9);
+}
+
+.play {
+    animation: move 3s infinite;
+}
+
+.play:hover {
+    animation: none;
+}
+
+@keyframes move {
+
+    0%,
+    10% {
+        rotate: 0deg;
+    }
+
+    10%,
+    20% {
+        rotate: 20deg;
+    }
+
+    20%,
+    30% {
+        rotate: -20deg;
+    }
+
+    30%,
+    40% {
+        rotate: 20deg;
+    }
+
+    40%,
+    50% {
+        rotate: -20deg;
+    }
+
+    50%,
+    60% {
+        rotate: 0deg;
+    }
+}
+
+input[type="text"] {
+    padding: 0.5vh;
+    border: none;
+    border-radius: 0.5vh;
+    width: 70vw;
+    max-width: 70vh;
+    background-color: #ff7b00;
+    color: #00003d;
+    font-weight: bold;
+}
+
+select {
+    padding: 0.5vh;
+    border: none;
+    border-radius: 0.5vh;
+    background-color: #00f7ff;
+    color: #00003d;
+    font-weight: bold;
+}
+
+input[type="radio"],
+select {
+    cursor: pointer;
+}
+
+#game-board {
+    border: 2vh solid #4d0101;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-collapse: collapse;
+    background-color: #00ffbf;
+    height: 100vh;
+    width: 100vw;
+}
+
+#game-board td {
+    border: 0.2vh solid black;
+    width: calc(100%/14);
+    height: calc(100%/12);
+    font-size: 22%;
+    font-weight: bold;
+    color: black;
+}
+
+.token{
+    width: 20%;
+    /* position: absolute; */
+}
+
+.holes{
+    width: 50%;
+}
+
+.car, .chest, .train, .tap, .ring{
+    width: 60%;
+}
+
+.trainl {
+    width: 30%;
+    float: right;
+    margin-right: 8%;
+}
+.quesl{
+    color: #4d0080;
+    font-size: 450% !important;
+    rotate: 90deg;
+}
+.ques{
+    color: #ff0000;
+    font-size: 550% !important;
+}
+.trainr{
+    width: 30%;
+    float: left;
+    margin-left: 8%;
+}
+
+.ltrain{
+    float: left;
+    margin-left: 8%;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+}
+.rtrain, .rchest{
+    float: right;
+    margin-right: 8%;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+}
+.chestr{
+    width: 20%;
+    float: left;
+    margin-left: 8%;
+}
+.go{
+    color: red;
+    font-size: 500%;
+    font-weight: bolder;
+}
+.goarrow{
+    color: red;
+    font-size: 800%;
+    font-weight: bolder;
+    float: right;
+    position: relative;
+    top: 45%;
+    transform: translateY(-50%);
+}
