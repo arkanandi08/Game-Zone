@@ -202,6 +202,10 @@ select {
     width: 60%;
 }
 
+.police{
+    width: 30%;
+}
+
 .trainl {
     width: 30%;
     float: right;
@@ -225,16 +229,17 @@ select {
 .ltrain{
     float: left;
     margin-left: 8%;
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
+    margin-top: 5%;
+}
+.lques{
+    float: left;
+    margin-left: 8%;
+    margin-top: 8%;
 }
 .rtrain, .rchest{
     float: right;
     margin-right: 8%;
-    position: relative;
-    top: 45%;
-    transform: translateY(-50%);
+    margin-top: 6.5%;
 }
 .chestr{
     width: 20%;
